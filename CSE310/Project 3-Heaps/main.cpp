@@ -2,32 +2,24 @@
 #include <iostream>
 #include "util.h"
 #include <cstring>
+#include "heap.h"
 
 using namespace std;
 
 int main(int arg, char *argv[]){
     Util util;
+    Heap heap;
     util.checkCommand(arg, argv);
-    string fileName = argv[1];
-    util.readLines(fileName);
+    std::string fileName = argv[1];
+    // while (true) {
+    //     // Only call readLines again if the previous one failed
+        
+    // }
+    heap.readLines(fileName);
+    // Proceed to accept user input
+    util.processInstructions();
 
     return 0;
 }
 
 
-
-//typedef struct of index key and pos
-typedef struct{
-    int index;
-    double key;
-    int pos;
-}ELEMENT;
-
-typedef struct TAG_HEAP{
-    int capacity;
-    int size;
-    int *H;
-    }HEAP;
-
-ELEMENT **V;
-HEAP *pHeap;
